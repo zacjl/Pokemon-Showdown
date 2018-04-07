@@ -70,7 +70,7 @@ exports.BattleAbilities = {
 				return this.chainModify(0.5);
 			}
 		},
-		desc: "If a Pokemon uses a Fire- or Ice- or Fighting-type attack against this Pokemon, that Pokemon's attacking stat is halved when calculating the damage to this Pokemon. This Pokemon takes no damage from Hail.",
+		desc: "If a Pokemon uses a Fire-, Ice-, or Fighting-type attack against this Pokemon, that Pokemon's attacking stat is halved when calculating the damage to this Pokemon. This Pokemon takes no damage from Hail.",
 		shortDesc: "Fire/Ice/Fighting-type moves against this Pokemon deal damage with a halved attacking stat; immunity to Hail.",
 	},
 	"marvelscale": {
@@ -91,12 +91,12 @@ exports.BattleAbilities = {
 		},
 		onModifyAccuracy: function () {},
 		desc: "If Hail is active, attacks against this Pokemon do 25% less than normal. If Hail is not active, attacks against this Pokemon do 12.5% less than normal. This Pokemon takes no damage from Hail.",
-		shortDesc: "If Hail is active, attacks against this Pokemon do 25% less; immunity to Hail.",
+		shortDesc: "Attacks against this Pokemon do 12.5% less, increased to 25% in Hail; immunity to Hail.",
 	},
 	"sandveil": {
 		inherit: true,
-		desc: "If Sandstorm is active, attacks against this Pokemon do 25% less than normal. If Sandstorm is not active, attacks against this Pokemon do 12.5% less than normal. This Pokemon takes no damage from Sandstorm.",
-		shortDesc: "If Sandstorm is active, attacks against this Pokemon do 25% less; immunity to Sandstorm.",
+		desc: "If Sandstorm is active, attacks against this Pokemon do 20% less than normal. This Pokemon takes no damage from Sandstorm.",
+		shortDesc: "If Sandstorm is active, attacks against this Pokemon do 20% less; immunity to Sandstorm.",
 		onSourceBasePower: function (basePower) {
 			if (this.isWeather('sandstorm')) {
 				return basePower * 4 / 5;
@@ -113,7 +113,7 @@ exports.BattleAbilities = {
 			return basePower * 7 / 8;
 		},
 		desc: "If Rain Dance is active, attacks against this Pokemon do 25% less than normal. This Pokemon cannot be burned. Gaining this Ability while burned cures it.",
-		shortDesc: "If Rain Dance is active, attacks against this Pokemon do 25% less; This Pokemon cannot be burned.",
+		shortDesc: "Attacks against this Pokemon do 12.5% less, increased to 25% in Rain; This Pokemon cannot be burned.",
 	},
 	"icebody": {
 		inherit: true,
@@ -480,8 +480,8 @@ exports.BattleAbilities = {
 				this.damage(source.maxhp / 3, source, target, null, true);
 			}
 		},
-		desc: "If this Pokemon is knocked out, that move's user loses 1/4 of its maximum HP, rounded down. If any active Pokemon has the Ability Damp, this effect is prevented.",
-		shortDesc: "If this Pokemon is KOed, that move's user loses 1/4 its max HP.",
+		desc: "If this Pokemon is knocked out, that move's user loses 1/3 of its maximum HP, rounded down. If any active Pokemon has the Ability Damp, this effect is prevented.",
+		shortDesc: "If this Pokemon is KOed, that move's user loses 1/3 its max HP.",
 	},
 	"cursedbody": {
 		desc: "When this Pokemon faints, attacker is Cursed.",
