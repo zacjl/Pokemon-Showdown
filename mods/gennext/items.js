@@ -28,7 +28,7 @@ exports.BattleItems = {
 				return accuracy * 1.3;
 			}
 		},
-		desc: "The accuracy of attacks by the holder is 1.6x.",
+		desc: "The accuracy of attacks by the holder is 1.3x.",
 	},
 	"zoomlens": {
 		inherit: true,
@@ -85,7 +85,7 @@ exports.BattleItems = {
 				}
 			}
 		},
-		desc: "Breaks on first hit, but allows pure Fighting types to survive that hit with 1 HP.",
+		desc: "Breaks on first hit, but allows pure Fighting types to survive one hit with 1 HP.",
 	},
 	"wiseglasses": {
 		inherit: true,
@@ -148,7 +148,7 @@ exports.BattleItems = {
 			}
 		},
 		onFoeBasePower: function (basePower, attacker, defender, move) {
-			let GossamerWingUsers = ["Butterfree", "Masquerain", "Beautifly", "Mothim", "Vivillon"];
+			let GossamerWingUsers = ["Butterfree", "Beautifly", "Masquerain", "Mothim", "Vivillon"];
 			if (GossamerWingUsers.includes(defender.template.species)) {
 				if (move.type === 'Rock' || move.type === 'Electric' || move.type === 'Ice') {
 					this.add('-message', "The attack was weakened by GoassamerWing!");
@@ -157,7 +157,7 @@ exports.BattleItems = {
 			}
 		},
 		onDamage: function (damage, defender, attacker, effect) {
-			let GossamerWingUsers = ["Butterfree", "Masquerain", "Beautifly", "Mothim", "Vivillon"];
+			let GossamerWingUsers = ["Butterfree", "Venomoth", "Beautifly", "Masquerain", "Mothim", "Volcarona", "Vivillon"];
 			if (GossamerWingUsers.includes(defender.template.species)) {
 				if (effect && effect.id === 'stealthrock') {
 					return damage / 2;
@@ -165,7 +165,7 @@ exports.BattleItems = {
 			}
 		},
 		onAfterMoveSecondarySelf: function (source, target, move) {
-			let GossamerWingUsers = ["Butterfree", "Masquerain", "Beautifly", "Mothim", "Vivillon"];
+			let GossamerWingUsers = ["Butterfree", "Venomoth", "Beautifly", "Masquerain", "Mothim", "Lilligant", "Volcarona", "Vivillon"];
 			if (move && move.effectType === 'Move' && move.category === 'Status' && GossamerWingUsers.includes(source.template.species)) {
 				this.heal(source.maxhp / 16);
 			}
