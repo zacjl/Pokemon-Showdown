@@ -105,7 +105,7 @@ Major changes:
   still give the foe a free switch-in _and_ a turn to set up.
 
 - Flower Gift now only boosts Sp. Def, but if Sunny Day is used while Cherrim
-  is out, the next switch-in also receives +1 SpD
+  is out, the next switch-in also receives +1 SpD. Cherrim-Sunshine is Grass/Fire Type.
 
 - All Quiver Dancers (except Smeargle) get an item named Gossamer Wing (Select
   "Stick" in the teambuilder). It makes them take half damage from Rock, Ice,
